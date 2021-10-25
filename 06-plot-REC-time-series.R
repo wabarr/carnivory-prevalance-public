@@ -20,8 +20,6 @@ doPlot <- function(plotBinwidth){
   forBins <- data.frame(midpoint=allbinmids[c(TRUE,FALSE)])
   singleBinPlot <- 
     ggplot(forPlot, aes(x=bin, y=resid)) + 
-    geom_tile(data=forBins, mapping=aes(x=midpoint, y=0),height=Inf, width=plotBinwidth/1000, fill=gwblue, inherit.aes = F, alpha=0.2) + 
-    geom_rect(zoneRects, mapping=aes(xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax, fill=id), inherit.aes = F, alpha=0.3) + 
     geom_hline(yintercept=0, color="red", linetype="dashed") + 
     #geom_vline(xintercept = 1.9, linetype="dashed") + 
     geom_line(color="grey50") + 

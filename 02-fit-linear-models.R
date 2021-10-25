@@ -39,8 +39,6 @@ doAnalysis <- function(zooarch_df, dataset_description){
   plot_residuals <- function(model, saveFig=TRUE, saveResids=TRUE, data=compositedata){
     data$resid <- residuals(model)
     ggplot(data, aes(x=bin, y=resid)) + 
-      geom_rect(data=filter(rects, odd==TRUE),aes(xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax), alpha=0.2, inherit.aes = FALSE) + 
-      geom_rect(data=filter(zoneRects,id != "Pre-Oldowan"), aes(xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax, fill=id), inherit.aes = FALSE, alpha=0.6) + 
       geom_point() + 
       stat_smooth(se=FALSE, size=1) + 
       geom_line() + 

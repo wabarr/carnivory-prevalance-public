@@ -12,13 +12,6 @@ binmaxes <- seq(0+binwidth, 7, by=binwidth)
 
 timelabel <- "Time Bin Midpoint (Ma)"
 
-##plotting rectangles 
-
-rects <- data.frame(xmin=binmins,
-                    xmax=binmaxes,
-                    ymin=-Inf, 
-                    ymax=Inf, 
-                    odd=rep(c(TRUE, FALSE), length.out=length(binmaxes)))
 
 ##zone rectangles for the different "zones" of time
 zoneRects <- data.frame(

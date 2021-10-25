@@ -40,8 +40,6 @@ compositedata_long$name <- factor(compositedata_long$name,
 
 ggplot(filter(compositedata_long, bin>1.2, bin<3.45, name != "nformation_sqrt"), 
   aes(x=bin, y=value^2)) + 
-    geom_rect(data=filter(rects, odd==T,xmin>1.1, xmax<3.6), aes(xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax), alpha=0.2, inherit.aes = FALSE) + 
-    geom_rect(data=zoneRects, aes(xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax, fill=id), inherit.aes=FALSE, alpha=0.3) + 
     geom_line(color=gwblue, size=0.5) + 
     geom_point(size=3) + 
     facet_wrap(~name, ncol=1, scales="free_y", labeller = labeller(name=variable_labels)) + 

@@ -69,8 +69,6 @@ allbinmids <- (binmaxes + binmins)/2
 binmids <- data.frame(midpoint=allbinmids[allbinmids>1.2 & allbinmids<2.65][c(TRUE, FALSE)])
 
 ggplot(forResidPlot, aes(x=bin, y=resid)) + 
-  geom_rect(zoneRects, mapping=aes(xmin=xmin, xmax=xmax, ymin=ymin, ymax=ymax, fill=id), alpha=0.3, inherit.aes = F) + 
-  geom_tile(data=binmids, mapping=aes(x=midpoint, y=0),height=Inf, width=binwidth, fill=gwblue, inherit.aes = F, alpha=0.2) + 
   geom_line( alpha=0.5) +
   geom_point(size=6) + 
   geom_label(aes(label=bin), size=1.5, label.padding=unit(0.1, "lines")) +
